@@ -1,0 +1,32 @@
+<div class="container">
+  <h1>All our Flats (<%= @flats.count %>)</h1>
+  <p>You searched for ABCD. We found X flats out of our <%= @flats.count %> on our website.</p>
+  <div class="row">
+    <% @flats.each do |flat| %>
+      <div class="col-xs-12 col-lg-4">
+        <div class="card">
+          <div class="card-image" style="background-image: url(<%= flat.img_url %>)"></div>
+          <div class="card-content text-center">
+            <h4><%= flat.name %></h4>
+            <p><%= flat.address %></p>
+            <div class="card-details">
+              <ul class='list-inline'>
+                <li class=list-inline-item><i class="fas fa-users"><%= flat.number_of_guests %></i></li>
+                <li class=list-inline-item><i class="fas fa-euro-sign"><%= flat.price_per_night %></i></li>
+              </ul>
+            </div>
+          </div>
+          <div class="card-links">
+            <ul class="list-inline card-list">
+              <li class="list-inline-item"><%= link_to 'More Info', flat_path(flat) %></li>
+              <li class="list-inline-item"><%= link_to 'Edit', edit_flat_path(flat) %></li>
+              <li class="list-inline-item"><%= link_to 'Remove', flat_path(flat),
+                method: :delete,
+                 data: { confirm: "Are you sure?" } %></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

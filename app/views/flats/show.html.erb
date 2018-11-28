@@ -1,0 +1,21 @@
+<div class="flat-picture" style="background-image: url(<%= @flat.img_url %>)"></div>
+<div class="container margin-negative">
+  <div class="flat-title text-center">
+    <h1><%= @flat.name %></h1>
+    <p><%= @flat.address %></p>
+  </div>
+  <div class="flat-description text-center">
+    <h2>A bit more info about this flat</h2>
+    <p><%= @flat.description %></p>
+  </div>
+  <div class="flat-details text-center">
+    <h2>Details</h2>
+    <ul class='list-inline'>
+      <li class=list-inline-item><i class="fas fa-users"><%= @flat.number_of_guests %></i></li>
+      <li class=list-inline-item><i class="fas fa-euro-sign"><%= @flat.price_per_night %></i></li>
+    </ul>
+  </div>
+</div>
+
+
+<div class="map" style="background-image: url('https://images.unsplash.com/photo-1494526585095-c41746248156?w=1200')"></div>
